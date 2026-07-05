@@ -3,8 +3,12 @@ var CFG=window.__TUTOR__||{compound:null,slug:null,base:""};
 var S={open:false,healthOk:null,level:"intermediate",mode:"explain",depth:"balanced",busy:false,history:[]};
 function esc(s){return (s||"").replace(/[&<>]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;"}[c];});}
 function escA(s){return esc(s).replace(/"/g,"&quot;");}
+// link the FIRST mention of each known mechanism to its concept page (display-only; runs on escaped text)
+var _CMAP=window.__CONCEPTS__||[],_CSLUG={},_CRE=null;
+(function(){var terms=[];for(var i=0;i<_CMAP.length;i++){var t=_CMAP[i][0];_CSLUG[t.toLowerCase()]=_CMAP[i][1];terms.push(t.replace(/[.*+?^${}()|[\]\\]/g,"\\$&"));}if(terms.length){try{_CRE=new RegExp("\\b("+terms.join("|")+")\\b","gi");}catch(e){_CRE=null;}}})();
+function linkifyConcepts(t){if(!_CRE)return t;var seen={};return t.replace(_CRE,function(m,term){var k=term.toLowerCase(),slug=_CSLUG[k];if(!slug||seen[k])return term;seen[k]=1;return '<a class="clink" href="'+(CFG.base||"")+'concepts/'+slug+'.html" target="_blank" rel="noopener">'+term+'</a>';});}
 function fmt(t){
-  t=esc(t)
+  t=linkifyConcepts(esc(t))
    .replace(/\[(Established)\]/gi,'<span class="ct est">Established</span>')
    .replace(/\[(Evidence)\]/gi,'<span class="ct ev">Evidence</span>')
    .replace(/\[(Contested)\]/gi,'<span class="ct con">Contested</span>')

@@ -55,6 +55,17 @@ input::placeholder{color:var(--tx3)}
 .cpage article{max-width:1180px;margin:0 auto;padding:0 clamp(20px,5vw,64px)}
 .chead{padding:clamp(40px,7vw,72px) 0 32px;border-bottom:1px solid var(--line)}
 .crumb{font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--tx3);text-transform:uppercase;margin:0 0 18px}
+a.clink{color:var(--accent);text-decoration:none;border-bottom:1px dotted rgba(123,214,168,.45)}
+a.clink:hover{border-bottom-style:solid}
+.chead{font-family:var(--serif);font-size:34px;line-height:1.1;margin:0 0 4px}
+.gene{font-family:var(--mono);font-size:13px;color:var(--tx3);margin:0 0 22px}
+.csub{color:var(--tx2);max-width:60ch;margin:0 0 26px;line-height:1.6}
+.cbody p{line-height:1.72;margin:0 0 14px}
+.cbk{margin-top:26px}.cbk a{color:var(--tx3);font-family:var(--mono);font-size:12px;text-decoration:none}.cbk a:hover{color:var(--accent)}
+.cgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}
+.ccard{display:block;padding:14px 15px;background:var(--card);border:1px solid var(--line);border-radius:12px;text-decoration:none;color:var(--tx);transition:border-color .15s,transform .15s}
+.ccard:hover{border-color:var(--line2);transform:translateY(-2px)}
+.ccard b{display:block;font-size:15px;margin-bottom:3px}.ccard .gene{margin:0;font-size:11px}
 .crumb a{color:var(--accent)}
 .chead h1{font-family:var(--serif);font-weight:500;font-size:clamp(38px,6vw,68px);line-height:1;letter-spacing:-.025em;margin:0 0 16px}
 .ctag{font-size:clamp(16px,2vw,20px);color:var(--tx2);max-width:70ch;margin:0 0 22px}
