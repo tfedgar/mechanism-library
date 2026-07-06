@@ -11,7 +11,15 @@
   <div><b>37</b><span>rodent / preclinical</span></div>
 </div>
 <h2>How each monograph is made</h2>
-<p>Every compound is researched against a 100k-chunk biomedical corpus (PubMed, full-text reviews, trials) and the public bio-databases, then written as a plain-language mechanism with a process diagram. A second, adversarial pass checks it for over-certainty, overclaiming, and citation mismatches before it ships. Each entry is then expanded into a full reference — receptor pharmacology, pharmacokinetics, dose-response, a side-effect-mechanism table, an evidence table, comparisons, history, open questions, and monitoring.</p>
+<p>Every compound is researched against a 100,000+ chunk biomedical corpus, then written as a plain-language mechanism with a process diagram. A second, adversarial pass checks it for over-certainty, overclaiming, and citation mismatches before it ships. Each entry is then expanded into a full reference — receptor pharmacology, pharmacokinetics, dose-response, a side-effect-mechanism table, an evidence table, comparisons, history, open questions, and monitoring.</p>
+<h2>Where the evidence comes from</h2>
+<p>Grounded answers are built only from evidence-grade sources — never from forum or social anecdote (that is kept strictly separate, and used only to understand what people are asking):</p>
+<ul>
+<li><b>Peer-reviewed literature</b> — PubMed &amp; Europe PMC abstracts, with a dedicated pull for <b>meta-analyses / systematic reviews</b> (top of the evidence pyramid) and <b>toxicology / adverse-event case reports</b> (the harm-mechanism side).</li>
+<li><b>Curated pharmacology</b> — mechanism-of-action from <b>ChEMBL</b>, and quantitative binding affinities (Ki/EC<sub>50</sub>/IC<sub>50</sub>) from the <b>IUPHAR/BPS Guide to PHARMACOLOGY</b>, each with the primary citation.</li>
+<li><b>Official drug labels</b> — <b>FDA / DailyMed</b> prescribing information: mechanism, boxed warnings, contraindications, and interactions for the approved compounds.</li>
+<li><b>Clinical-trial records</b>, full-text reviews, and reference textbooks.</li>
+</ul>
 <h2>Evidence tiers</h2>
 <p>The signature here is honesty about <em>human</em> evidence. Every claim carries a certainty tag, and every compound a tier:</p>
 <ul>
@@ -20,7 +28,7 @@
 <li><span class="badge tier-pre">Rodent / preclinical</span> — no human data; rodent and in-vitro only.</li>
 </ul>
 <h2>Citation integrity</h2>
-<p>Every PMID in the library is checked against NCBI to confirm it resolves to a real record and is not retracted. At last audit: <b>3,129 unique citations, 100% resolving, 0 fabricated</b>, with 3 retracted papers found and flagged (Dihexa, Noopept, Taurine) rather than hidden. References on each page link straight to PubMed.</p>
+<p>Every PMID in the library is checked against NCBI to confirm it resolves to a real record. Beyond that, <b>every source is screened against the Retraction Watch dataset at index time</b> — retracted papers and expressions of concern are excluded from the evidence tiers before they can ever ground an answer, not caught after the fact. At last audit: <b>3,129 unique citations, 100% resolving, 0 fabricated</b>. References on each page link straight to PubMed.</p>
 <h2>What this is not</h2>
 <p>This is educational mechanism content, not medical advice, and it contains no dosing protocols. "How it works" and "what to watch" are not "how to use it." Many of these compounds are unapproved, illegal in sport, or studied only in animals — the tiers say so plainly.</p>
 <p><a class="pg" href="index.html">← Back to the library</a></p>
