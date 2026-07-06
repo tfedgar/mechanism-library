@@ -74,6 +74,10 @@ input::placeholder{color:var(--tx3)}
 .card h3{font-family:var(--serif);font-weight:500;font-size:20px;letter-spacing:-.01em;margin:0 6px 6px 0;padding-right:14px}
 .card .cl{font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--accent2);text-transform:uppercase;margin:0 0 9px}
 .card .tg{font-size:13.5px;color:var(--tx2);margin:0;line-height:1.55}
+.cchips{display:flex;gap:6px;margin-top:11px;flex-wrap:wrap}
+.cchip{font-family:var(--mono);font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;padding:2px 7px;border-radius:5px;border:1px solid}
+.cchip.rx{color:var(--accent);border-color:rgba(123,214,168,.4);background:rgba(123,214,168,.08)}
+.cchip.warn{color:var(--pre);border-color:rgba(212,116,78,.4);background:rgba(212,116,78,.08)}
 @keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
 .empty{color:var(--tx3);text-align:center;padding:48px;font-size:15px}
 .foot{border-top:1px solid var(--line);padding:40px clamp(20px,5vw,64px);color:var(--tx3);font-size:13.5px;max-width:1200px;margin:40px auto 0}
@@ -172,6 +176,8 @@ tr:last-child td{border-bottom:none}
 .caveat{background:rgba(212,116,78,.07);border:1px solid rgba(212,116,78,.22);border-radius:12px;padding:16px 18px;color:var(--tx2)}
 .fda-box{background:rgba(212,116,78,.09);border:1px solid rgba(212,116,78,.3);border-left:3px solid var(--pre);border-radius:10px;padding:13px 16px;margin:6px 0 14px;color:var(--tx);font-size:14.5px;line-height:1.6}
 .fda-tag{display:inline-block;font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--pre);border:1px solid var(--pre);border-radius:5px;padding:2px 7px;margin-right:9px;vertical-align:1px}
+.warnbanner{background:rgba(212,116,78,.1);border:1px solid rgba(212,116,78,.35);border-radius:12px;padding:14px 17px;margin:0 0 26px;color:var(--tx);font-size:14px;line-height:1.6}
+.warnbanner a{color:var(--pre);white-space:nowrap;font-family:var(--mono);font-size:12px}
 .refs{display:flex;flex-wrap:wrap;gap:8px}
 .cite{font-family:var(--mono);font-size:12px;color:var(--accent);border-bottom:1px solid rgba(123,214,168,.3);transition:color .15s}
 .cite:hover{color:#a6ecc8}.cite.retracted{color:var(--pre);border-color:rgba(212,116,78,.4)}
