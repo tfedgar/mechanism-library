@@ -99,6 +99,7 @@ a.clink:hover{border-bottom-style:solid}
 .badges{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:26px}
 .badge{font-family:var(--mono);font-size:11.5px;letter-spacing:.05em;padding:6px 12px;border-radius:999px;border:1px solid var(--line2)}
 .badge.ghost{color:var(--tx2)}
+.badge.reg{background:rgba(123,214,168,.13);color:var(--accent);border-color:rgba(123,214,168,.4)}
 .tier-human{background:rgba(95,194,138,.13);color:var(--human);border-color:rgba(95,194,138,.35)}
 .tier-limited{background:rgba(214,168,78,.13);color:var(--limited);border-color:rgba(214,168,78,.35)}
 .tier-pre{background:rgba(212,116,78,.13);color:var(--pre);border-color:rgba(212,116,78,.35)}
@@ -169,6 +170,8 @@ tr:last-child td{border-bottom:none}
 .unk li,.eff li{color:var(--tx2);margin-bottom:8px}.eff,.unk{padding-left:20px}
 .hr-note{font-family:var(--mono);font-size:12px;color:var(--accent2);letter-spacing:.03em}
 .caveat{background:rgba(212,116,78,.07);border:1px solid rgba(212,116,78,.22);border-radius:12px;padding:16px 18px;color:var(--tx2)}
+.fda-box{background:rgba(212,116,78,.09);border:1px solid rgba(212,116,78,.3);border-left:3px solid var(--pre);border-radius:10px;padding:13px 16px;margin:6px 0 14px;color:var(--tx);font-size:14.5px;line-height:1.6}
+.fda-tag{display:inline-block;font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--pre);border:1px solid var(--pre);border-radius:5px;padding:2px 7px;margin-right:9px;vertical-align:1px}
 .refs{display:flex;flex-wrap:wrap;gap:8px}
 .cite{font-family:var(--mono);font-size:12px;color:var(--accent);border-bottom:1px solid rgba(123,214,168,.3);transition:color .15s}
 .cite:hover{color:#a6ecc8}.cite.retracted{color:var(--pre);border-color:rgba(212,116,78,.4)}
