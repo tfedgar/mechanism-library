@@ -178,6 +178,24 @@ tr:last-child td{border-bottom:none}
 .fda-tag{display:inline-block;font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--pre);border:1px solid var(--pre);border-radius:5px;padding:2px 7px;margin-right:9px;vertical-align:1px}
 .warnbanner{background:rgba(212,116,78,.1);border:1px solid rgba(212,116,78,.35);border-radius:12px;padding:14px 17px;margin:0 0 26px;color:var(--tx);font-size:14px;line-height:1.6}
 .warnbanner a{color:var(--pre);white-space:nowrap;font-family:var(--mono);font-size:12px}
+.vs-pick{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:12px;max-width:760px}
+.vs-pick select{flex:1;min-width:200px;font-size:16px}
+.vs-x{font-family:var(--serif);font-style:italic;color:var(--accent);font-size:20px}
+.vsgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.vcol{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 20px 18px}
+.vname{font-family:var(--serif);font-weight:500;font-size:22px;color:var(--tx);display:inline-block;margin-bottom:12px}
+.vname:hover{color:var(--accent)}
+.vchips{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:14px}
+.vchip{font-family:var(--mono);font-size:10px;letter-spacing:.05em;text-transform:uppercase;padding:3px 8px;border-radius:6px;border:1px solid var(--line2);color:var(--tx2)}
+.vchip.vt-human{color:var(--human);border-color:rgba(95,194,138,.4)}.vchip.vt-limited{color:var(--limited);border-color:rgba(214,168,78,.4)}.vchip.vt-pre{color:var(--pre);border-color:rgba(212,116,78,.4)}
+.vchip.rx{color:var(--accent);border-color:rgba(123,214,168,.4)}.vchip.warn{color:var(--pre);border-color:rgba(212,116,78,.45)}
+.vtag{font-size:14px;color:var(--tx2);line-height:1.55;margin:0 0 16px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.vrow{margin-bottom:12px}
+.vk{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent2);margin-bottom:4px}
+.vv{font-size:14px;color:var(--tx);line-height:1.55}
+.vul{margin:2px 0 0;padding-left:18px}.vul li{font-size:13.5px;color:var(--tx2);margin-bottom:3px}
+.vdim{color:var(--tx3)}
+@media(max-width:640px){.vsgrid{grid-template-columns:1fr}.vs-x{display:none}}
 .refs{display:flex;flex-wrap:wrap;gap:8px}
 .cite{font-family:var(--mono);font-size:12px;color:var(--accent);border-bottom:1px solid rgba(123,214,168,.3);transition:color .15s}
 .cite:hover{color:#a6ecc8}.cite.retracted{color:var(--pre);border-color:rgba(212,116,78,.4)}
