@@ -62,12 +62,17 @@
       edges.forEach(function(e){ if(!e.classList.contains('dg-lit')) e.classList.add('dg-dim'); });
     }
     function tierName(n){ return {drug:'trigger',molecular:'molecular',cellular:'cellular',effect:'effect',branch:'branch',caveat:'caveat'}[n.getAttribute('data-tier')]||''; }
+    function nodeTip(n,ev){ var t=tierName(n); showTip('<b>'+esc(n.getAttribute('data-full'))+'</b>'+(t?'<span class="dg-t">'+t+'</span>':''),ev); }
     nodes.forEach(function(n){
       n.style.cursor='pointer';
-      n.addEventListener('mouseenter',function(ev){ focus(n); var t=tierName(n); showTip('<b>'+esc(n.getAttribute('data-full'))+'</b>'+(t?'<span class="dg-t">'+t+'</span>':''),ev); });
+      n.addEventListener('mouseenter',function(ev){ focus(n); nodeTip(n,ev); });
       n.addEventListener('mousemove',moveTip);
       n.addEventListener('mouseleave',clear);
       n.addEventListener('click',function(){ clickNode(n); });
+      // keyboard parity: focus traces the flow (like hover); Enter/Space activates (like click)
+      n.addEventListener('focus',function(){ focus(n); var r=n.getBoundingClientRect(); nodeTip(n,{clientX:r.left+r.width/2,clientY:r.top}); });
+      n.addEventListener('blur',clear);
+      n.addEventListener('keydown',function(ev){ if(ev.key==='Enter'||ev.key===' '){ ev.preventDefault(); clickNode(n); } });
     });
     edges.forEach(function(e){
       e.addEventListener('mouseenter',function(ev){ var f=e.getAttribute('data-full'); if(f) showTip(esc(f),ev); });
