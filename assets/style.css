@@ -175,6 +175,10 @@ a.clink abbr[title]{text-decoration:none;cursor:pointer}
 .c-spec{background:color-mix(in srgb,var(--spec) 13%,transparent);color:var(--spec)}.c-mid{background:color-mix(in srgb,var(--tx2) 12%,transparent);color:var(--tx2)}
 .diagram{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;color:#83817b;overflow-x:auto}
 .diagram svg{display:block;max-width:100%;height:auto;margin:0 auto}
+.deepen{list-style:none;padding:0;margin:6px 0 0;display:flex;flex-direction:column;gap:13px}
+.deepen li{padding-left:16px;border-left:2px solid var(--line2);line-height:1.55}
+.dtier{display:inline-block;font-family:var(--mono);font-size:9.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--tx3);background:var(--bg2);border:1px solid var(--line);border-radius:4px;padding:1px 6px;margin-left:4px;white-space:nowrap;vertical-align:1px}
+.dnote{font-size:11.5px;color:var(--tx3);margin:14px 4px 0;line-height:1.5;font-style:italic}
 .dlegend{display:flex;flex-wrap:wrap;align-items:center;gap:5px 15px;font-family:var(--mono);font-size:10.5px;color:var(--tx2);margin:11px 4px 0;letter-spacing:.02em}
 .dlegend .dk{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:5px;vertical-align:-2px;border:1.5px solid transparent}
 .diagram .c-blue{fill:#163f63}.diagram .c-teal{fill:#0f5946}.diagram .c-amber{fill:#5f3f14}.diagram .c-gray{fill:#34332f}
