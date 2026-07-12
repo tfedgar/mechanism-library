@@ -345,6 +345,8 @@ tr:last-child td{border-bottom:none}
   .nav nav{width:100%;overflow-x:auto;white-space:nowrap;margin-top:4px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
   .nav nav::-webkit-scrollbar{display:none}
   .nav nav a{margin-left:0;margin-right:20px}
+  /* right-edge fade signals the nav scrolls to more items; toggled by JS only when there's more to the right */
+  .nav.nav-more nav{-webkit-mask-image:linear-gradient(90deg,#000 82%,transparent);mask-image:linear-gradient(90deg,#000 82%,transparent)}
 }
 @media(max-width:640px){
   .nav nav a{font-size:13.5px;margin-right:19px}
