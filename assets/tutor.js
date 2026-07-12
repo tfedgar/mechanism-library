@@ -47,7 +47,7 @@ panel.innerHTML=
  '<select class="md"><option value="explain" selected>Explain</option><option value="socratic">Socratic</option><option value="quiz">Quiz me</option></select>'+
  '<select class="dp" title="answer depth"><option value="simple">Simple</option><option value="balanced" selected>Balanced</option><option value="deep">Deep dive</option></select>'+
  '</div><div class="tp-body" id="tpb"></div>'+
- '<div class="tp-foot"><div class="tp-in"><textarea rows="1" placeholder="Ask anything'+(CFG.compound?(" about "+escA(CFG.compound)):"")+'..."></textarea><button class="tp-send">Ask</button></div>'+
+ '<div class="tp-foot"><div class="tp-in"><textarea rows="1" placeholder="Ask about '+(CFG.compound?escA(CFG.compound):"a compound")+'..."></textarea><button class="tp-send">Ask</button></div>'+
  '<div class="tp-dis">local Qwen &middot; grounded in your corpus &middot; certainty-labelled &middot; not medical advice</div></div>';
 document.body.appendChild(panel);
 var body=panel.querySelector("#tpb"),ta=panel.querySelector("textarea"),send=panel.querySelector(".tp-send");
@@ -61,14 +61,14 @@ function clearHints(){var hs=body.querySelectorAll(".tp-hint");for(var i=0;i<hs.
 function health(){
   fetch("/api/health").then(function(r){if(!r.ok)throw 0;return r.json();}).then(function(h){
     S.healthOk=h.qwen;
-    if(!h.qwen){hint('The tutor server is up, but the <b>local Qwen model</b> is not answering on :8080. Start it (Agent Console / run-llama-server.sh), then reopen.');}
-    else{var w=CFG.compound?(" about <b>"+escA(CFG.compound)+"</b>"):" about any compound in the library";hint("Ask me anything"+w+". I answer only from your local corpus, label how certain each claim is, and remember what I teach you &mdash; all offline.");}
+    if(!h.qwen){hint('The tutor server is up, but the <b>local model</b> is not answering on :8080. Start it (Agent Console / run-llama-server.sh), then reopen.');}
+    else{var w=CFG.compound?(" about <b>"+escA(CFG.compound)+"</b>"):" about any compound in the library";hint("Ask me anything"+w+". I answer only from this library's cited sources, label how certain each claim is, and remember what I teach you &mdash; all offline.");}
   }).catch(function(){
     S.healthOk=false;send.disabled=true;
     if(location.protocol==="file:"){
       hint('This page is open as a plain <b>file</b>, so the tutor cannot run. To chat offline, double-click <b>Open Mechanism Library (AI Tutor).command</b> &mdash; it starts the local server and the tutor.');
     }else{
-      hint('The <b>library</b> is fully browsable here. The <b>AI tutor</b> needs its model backend, which isn\'t attached to this hosted version yet &mdash; hosted AI is coming soon. For the live tutor now, use the desktop version.');
+      hint('The <b>library</b> is fully browsable here. The <b>tutor</b> runs on a local model that isn\'t attached to this hosted version &mdash; to chat with it, use the desktop version.');
     }
   });
 }
@@ -76,7 +76,7 @@ function addMsg(cls,html){var d=document.createElement("div");d.className="tmsg 
 function meta(bot,sources,concepts,follows,grounding){
   if(grounding&&grounding.label){var gp=[];for(var k in grounding.by_type){gp.push(grounding.by_type[k]+" "+k);}
     var gc=grounding.label==="strong"?"gs-strong":(grounding.label==="moderate"?"gs-mod":"gs-thin");
-    bot.insertAdjacentHTML("afterbegin",'<div class="tgnd '+gc+'">grounding: '+esc(grounding.label)+(gp.length?(" &middot; "+esc(gp.join(", "))):"")+"</div>");}
+    bot.insertAdjacentHTML("afterbegin",'<div class="tgnd '+gc+'">sources: '+esc(grounding.label)+(gp.length?(" &middot; "+esc(gp.join(", "))):"")+"</div>");}
   if(sources&&sources.length){var s='<div class="tsrc">';for(var i=0;i<sources.length;i++){var c=sources[i];var lbl="["+c.n+"] "+esc(c.type);s+=c.url?('<a href="'+escA(c.url)+'" target="_blank" rel="noopener">'+lbl+"</a>"):("<span>"+lbl+"</span>");}s+="</div>";bot.insertAdjacentHTML("beforeend",s);}
   if(concepts&&concepts.length){var cc=[];for(var j=0;j<concepts.length;j++)cc.push(esc(concepts[j]));bot.insertAdjacentHTML("beforeend",'<div class="tnew">&#10022; learned: '+cc.join(" &middot; ")+"</div>");}
   if(follows&&follows.length){var f='<div class="tfu"><div class="tfu-h">Keep going &#8595;</div>';for(var m=0;m<follows.length;m++){f+='<button class="tfu-b" type="button">'+esc(follows[m])+"</button>";}f+="</div>";bot.insertAdjacentHTML("beforeend",f);

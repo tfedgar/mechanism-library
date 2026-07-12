@@ -26,7 +26,7 @@
   if(lensBtn){ var ol=document.querySelector('.steps'); lensBtn.addEventListener('click',function(){
     var on=lensBtn.getAttribute('data-lens')!=='on'; lensBtn.setAttribute('data-lens',on?'on':'off');
     lensBtn.classList.toggle('on',on); if(ol) ol.classList.toggle('lens-human',on);
-    lensBtn.textContent=on?'Show all steps':'Human-evidenced only';
+    lensBtn.textContent=on?'Show all steps':'Strongest evidence only';
   }); }
   // Block 5: self-check reveal
   [].slice.call(document.querySelectorAll('.qa .qq')).forEach(function(b){

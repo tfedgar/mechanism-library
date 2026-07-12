@@ -60,7 +60,7 @@
 .tp-in textarea{flex:1;background:var(--card);border:1px solid var(--line2);color:var(--tx);font-family:var(--sans);
   font-size:14px;padding:10px 12px;border-radius:11px;resize:none;max-height:120px;outline:none;line-height:1.45}
 .tp-in textarea:focus{border-color:var(--accent)}
-.tp-send{background:var(--accent);color:var(--on-accent);border:none;border-radius:10px;padding:10px 15px;cursor:pointer;
+.tp-send{background:var(--accent);color:var(--on-accent);border:none;border-radius:var(--r-ctrl);padding:10px 15px;cursor:pointer;
   font-family:var(--sans);font-weight:600;font-size:14px}
 .tp-send:disabled{opacity:.4;cursor:default}
 .tp-dis{font-family:var(--mono);font-size:10px;color:var(--tx3);margin:9px 2px 0;text-align:center;letter-spacing:.02em}
