@@ -205,6 +205,24 @@ a.clink abbr[title]{text-decoration:none;cursor:pointer}
 .qq:hover{background:var(--card2)}
 .qaa{padding:0 16px 15px;color:var(--tx2);line-height:1.55;border-top:1px solid var(--line)}
 .qaa{padding-top:12px}
+/* Block 2 — "In brief" infobox (Wikipedia-style key facts) */
+.infobox{float:right;width:270px;max-width:44%;margin:2px 0 18px 24px;padding:14px 16px;background:var(--card2);border:1px solid var(--line);border-radius:12px}
+.infobox .ib-h{font-family:var(--mono);font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--tx3);margin:0 0 10px}
+.infobox dl{margin:0;display:grid;grid-template-columns:1fr;gap:9px}
+.infobox dt{font-family:var(--mono);font-size:10px;letter-spacing:.05em;text-transform:uppercase;color:var(--tx3)}
+.infobox dd{margin:2px 0 0;font-size:14px;color:var(--tx);line-height:1.35}
+@media(max-width:640px){.infobox{float:none;width:auto;max-width:none;margin:0 0 18px}}
+/* Encyclopedia reading-depth toggle */
+.depth{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin:0 0 24px;position:sticky;top:0;z-index:7;padding:9px 0;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(7px)}
+.depth-lbl{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--tx3);margin-right:4px}
+.depth-b{font-family:var(--mono);font-size:12px;color:var(--tx2);background:var(--card2);border:1px solid var(--line);border-radius:999px;padding:5px 14px;cursor:pointer;transition:color .14s,border-color .14s,background .14s}
+.depth-b:hover{color:var(--tx);border-color:var(--tx3)}
+.depth-b.on{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
+.depth-hint{font-size:11.5px;color:var(--tx3);margin-left:4px}
+article[data-read="plain"] .sec[data-level="standard"],article[data-read="plain"] .sec[data-level="expert"],
+article[data-read="standard"] .sec[data-level="expert"]{display:none}
+article[data-read="plain"] .toc a[data-level="standard"],article[data-read="plain"] .toc a[data-level="expert"],
+article[data-read="standard"] .toc a[data-level="expert"]{display:none}
 /* Block 8 — receptor-binding fingerprint chart */
 .bchart{margin:6px 0 4px}
 .bnote{font-size:12px;color:var(--tx3);margin:0 0 14px;line-height:1.5}
@@ -217,6 +235,10 @@ a.clink abbr[title]{text-decoration:none;cursor:pointer}
 .bval{font-family:var(--mono);font-size:12px;color:var(--tx);font-variant-numeric:tabular-nums}
 .bact{grid-column:1/-1;font-size:11px;color:var(--tx3);margin:-4px 0 2px}
 @media(max-width:640px){.brow{grid-template-columns:1fr 2fr auto}}
+/* Block 5 (enc) — plain section glosses */
+.secgloss{color:var(--tx3);font-size:13.5px;font-style:italic;margin:-4px 0 16px;line-height:1.45;max-width:60ch}
+/* Block 3 (enc) — concept plain lede */
+.cbody .clede{font-size:clamp(16px,1.9vw,19px);line-height:1.55;color:var(--tx);font-weight:450;margin:0 0 16px}
 /* Block 6 — concept back-links */
 .cchips{display:flex;flex-wrap:wrap;gap:8px}
 .ccl{font-size:13.5px;color:var(--tx);background:var(--card2);border:1px solid var(--line);border-radius:999px;padding:6px 13px;text-decoration:none;transition:border-color .15s,color .15s}

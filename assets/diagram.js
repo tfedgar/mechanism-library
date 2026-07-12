@@ -1,4 +1,26 @@
 (function(){
+  // Encyclopedia reading-depth toggle: plain / standard / full (persisted). A section shows when its
+  // data-level <= the chosen depth. Default = full (nothing hidden unless the reader asks).
+  var _art=document.querySelector('article'), _db=[].slice.call(document.querySelectorAll('.depth-b'));
+  if(_art && _db.length){
+    var _hint={plain:'the essentials',standard:'the core picture',expert:'everything — incl. pharmacology & refs'};
+    var setD=function(l){ _art.setAttribute('data-read',l); try{localStorage.setItem('gr-depth',l);}catch(e){}
+      _db.forEach(function(b){b.classList.toggle('on',b.getAttribute('data-lvl')===l);});
+      var h=document.querySelector('.depth-hint'); if(h)h.textContent=_hint[l]||''; };
+    var st; try{st=localStorage.getItem('gr-depth');}catch(e){}
+    setD(st||'expert');
+    _db.forEach(function(b){ b.addEventListener('click',function(){ setD(b.getAttribute('data-lvl')); }); });
+  }
+  // Glossary: TAP an abbreviation to reveal its full name (native hover already covers desktop; this adds mobile)
+  var _abbrs=[].slice.call(document.querySelectorAll('abbr[title]'));
+  if(_abbrs.length){
+    var _at=document.createElement('div'); _at.className='dg-tip'; _at.style.display='none'; document.body.appendChild(_at);
+    _abbrs.forEach(function(a){ a.style.cursor='help';
+      a.addEventListener('click',function(ev){ ev.stopPropagation(); _at.textContent=a.getAttribute('title');
+        _at.style.display='block'; var r=a.getBoundingClientRect();
+        _at.style.left=Math.min(r.left,innerWidth-_at.offsetWidth-10)+'px'; _at.style.top=(r.bottom+window.scrollY-window.scrollY+6)+'px'; }); });
+    document.addEventListener('click',function(){_at.style.display='none';});
+  }
   // Block 4: evidence lens — "human-evidenced only" hides non-human steps (runs even without a diagram)
   var lensBtn=document.querySelector('.lens-btn');
   if(lensBtn){ var ol=document.querySelector('.steps'); lensBtn.addEventListener('click',function(){
