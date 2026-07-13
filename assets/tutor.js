@@ -48,7 +48,7 @@ panel.innerHTML=
  '<select class="dp" title="answer depth"><option value="simple">Simple</option><option value="balanced" selected>Balanced</option><option value="deep">Deep dive</option></select>'+
  '</div><div class="tp-body" id="tpb"></div>'+
  '<div class="tp-foot"><div class="tp-in"><textarea rows="1" placeholder="Ask about '+(CFG.compound?escA(CFG.compound):"a compound")+'..."></textarea><button class="tp-send">Ask</button></div>'+
- '<div class="tp-dis">local Qwen &middot; grounded in your corpus &middot; certainty-labelled &middot; not medical advice</div></div>';
+ '<div class="tp-dis">runs on your machine &middot; answers only from cited sources &middot; certainty-labelled &middot; not medical advice</div></div>';
 document.body.appendChild(panel);
 var body=panel.querySelector("#tpb"),ta=panel.querySelector("textarea"),send=panel.querySelector(".tp-send");
 panel.querySelector(".lv").onchange=function(e){S.level=e.target.value;};
