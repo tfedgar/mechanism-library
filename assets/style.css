@@ -361,6 +361,35 @@ details.faers summary b{color:var(--tx);font-variant-numeric:tabular-nums}
 .g-moderate{color:var(--est);border-color:color-mix(in srgb,var(--est) 40%,transparent)}
 .g-low{color:var(--limited);border-color:color-mix(in srgb,var(--limited) 40%,transparent)}
 .g-very-low{color:var(--pre);border-color:color-mix(in srgb,var(--pre) 40%,transparent)}
+/* evidence appraisals — per-study weight badge + design-tier label + collapsed 'why this weight' trail */
+.wbadge{font-family:var(--mono);font-size:10px;letter-spacing:.04em;text-transform:uppercase;padding:2px 8px;border-radius:5px;white-space:nowrap;border:1px solid;display:inline-flex;align-items:center;gap:6px}
+.wbadge::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor;flex:none}
+.w-high{color:var(--human);border-color:color-mix(in srgb,var(--human) 40%,transparent);background:color-mix(in srgb,var(--human) 9%,transparent)}
+.w-mod{color:var(--est);border-color:color-mix(in srgb,var(--est) 40%,transparent);background:color-mix(in srgb,var(--est) 9%,transparent)}
+.w-low{color:var(--limited);border-color:color-mix(in srgb,var(--limited) 40%,transparent);background:color-mix(in srgb,var(--limited) 9%,transparent)}
+.w-vlow{color:var(--pre);border-color:color-mix(in srgb,var(--pre) 40%,transparent);background:color-mix(in srgb,var(--pre) 9%,transparent)}
+.wtier{font-family:var(--mono);font-size:10.5px;letter-spacing:.05em;font-variant-caps:small-caps;color:var(--tx3);margin-left:7px}
+.wcell{white-space:nowrap}
+tr.apr-row td{padding-top:0;border-top:none}
+details.apr{border:1px solid var(--line);border-radius:var(--r-card);background:var(--card2);overflow:hidden}
+details.apr summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:9px;padding:9px 13px;font-size:13px;color:var(--tx2)}
+details.apr summary::-webkit-details-marker{display:none}
+details.apr summary::before{content:"";width:7px;height:7px;border-right:2px solid var(--tx3);border-bottom:2px solid var(--tx3);transform:rotate(-45deg);transition:transform .2s;flex:none}
+details.apr[open] summary::before{transform:rotate(45deg)}
+details.apr summary:hover{color:var(--tx)}
+.apr-more{font-family:var(--mono);font-size:10px;letter-spacing:.05em;text-transform:uppercase;color:var(--tx3)}
+.apr-h{font-family:var(--mono);font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--tx3);margin:12px 14px 4px}
+.apr-li{list-style:none;padding:0;margin:0 14px}
+.apr-li li{position:relative;padding-left:18px;font-size:13px;color:var(--tx2);line-height:1.5;margin-bottom:4px}
+.apr-li.s li::before{content:"+";position:absolute;left:2px;color:var(--human);font-family:var(--mono)}
+.apr-li.l li::before{content:"–";position:absolute;left:2px;color:var(--limited);font-family:var(--mono)}
+.apr-trail{margin:0 14px;padding-left:24px;font-family:var(--mono);font-size:11.5px;line-height:1.6;color:var(--tx2)}
+.apr-trail li{margin-bottom:2px}
+.apr-rob{font-size:12.5px;color:var(--tx2);margin:10px 14px 0;line-height:1.5}
+.apr-rob b{color:var(--tx)}
+dl.apr-x{display:grid;grid-template-columns:auto 1fr;gap:2px 14px;margin:12px 14px 14px;font-size:12.5px}
+dl.apr-x dt{font-family:var(--mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent2);padding-top:2px}
+dl.apr-x dd{margin:0;color:var(--tx2)}
 /* model v2 — citation superscripts → References anchors */
 sup.rref{font-size:10px;line-height:0;margin-left:2px;white-space:nowrap}
 sup.rref a{font-family:var(--mono);color:var(--accent);padding:0 1px}

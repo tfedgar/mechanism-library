@@ -61,7 +61,7 @@ function clearHints(){var hs=body.querySelectorAll(".tp-hint");for(var i=0;i<hs.
 function health(){
   fetch("/api/health").then(function(r){if(!r.ok)throw 0;return r.json();}).then(function(h){
     S.healthOk=h.qwen;
-    if(!h.qwen){hint('The tutor server is up, but the <b>local model</b> is not answering on :8080. Start it (Agent Console / run-llama-server.sh), then reopen.');}
+    if(!h.qwen){hint('The tutor server is up, but the <b>local model</b> is not answering on :8000. Start it (open the oMLX app / run-llama-server.sh), then reopen.');}
     else{var w=CFG.compound?(" about <b>"+escA(CFG.compound)+"</b>"):" about any compound in the library";hint("Ask me anything"+w+". I answer only from this library's cited sources, label how certain each claim is, and remember what I teach you &mdash; all offline.");}
   }).catch(function(){
     S.healthOk=false;send.disabled=true;
